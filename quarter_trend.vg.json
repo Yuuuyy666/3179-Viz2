@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Quarterly Ridership Trend (Oct 2023 – Jun 2025)",
+    "width": 800,
+    "height": 600,
+    "data": {
+    "url": "ridership_ktmb_monthly.csv"
+    },
+    "transform": [
+    {
+        "calculate": "toDate(datum.date)",
+        "as": "parsed_date"
+    },
+    {
+        "calculate": "year(datum.parsed_date)",
+        "as": "year"
+    },
+    {
+        "calculate": "quarter(datum.parsed_date)",
+        "as": "quarter"
+    },
+    {
+        "filter": "datum.parsed_date >= toDate('2023-10-01') && datum.parsed_date <= toDate('2025-06-30')"
+    },
+    {
+        "aggregate": [
+        {"op": "sum", "field": "ridership", "as": "total_ridership"}
+        ],
+        "groupby": ["year", "quarter", "service"]
+    },
+    {
+        "calculate": "datum.year + ' Q' + datum.quarter",
+        "as": "year_quarter"
+    }
+    ],
+    "mark": {
+    "type": "line",
+    "point": true
+    },
+    "encoding": {
+    "x": {
+        "field": "year_quarter",
+        "type": "ordinal",
+        "title": "Quarter"
+    },
+    "y": {
+        "field": "total_ridership",
+        "type": "quantitative",
+        "title": "Total Ridership"
+    },
+    "color": {
+        "field": "service",
+        "type": "nominal",
+        "title": "Service Line"
+    },
+    "tooltip": [
+        {"field": "service", "title": "Service"},
+        {"field": "year_quarter", "title": "Quarter"},
+        {"field": "total_ridership", "title": "Total Ridership"}
+    ]
+    }
+}

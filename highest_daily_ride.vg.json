@@ -1,0 +1,76 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Highest Daily Ridership by Service (Year 2025)",
+    "width": 800,
+    "height": 450,
+    "data": {
+    "url": "ridership_headline.csv"
+    },
+    "transform": [
+    {
+        "calculate": "toDate(datum.date)",
+        "as": "parsed_date"
+    },
+    {
+        "calculate": "datum.date",
+        "as": "date_str"
+    },
+    {
+        "filter": "datum.parsed_date >= toDate('2025-01-01') && datum.parsed_date <= toDate('2025-12-31')"
+    },
+    {
+        "fold": [
+        "rail_ets",
+        "rail_intercity",
+        "rail_komuter_utara",
+        "rail_tebrau",
+        "rail_komuter"
+        ],
+        "as": ["service", "ridership"]
+    },
+    {
+        "aggregate": [
+        {"op": "sum", "field": "ridership", "as": "total_ridership"}
+        ],
+        "groupby": ["parsed_date", "date_str", "service"]
+    },
+    {
+        "joinaggregate": [
+        {"op": "sum", "field": "total_ridership", "as": "day_total"}
+        ],
+        "groupby": ["parsed_date", "date_str"]
+    },
+    {
+        "window": [
+        {"op": "rank", "as": "rank"}
+        ],
+        "sort": [{"field": "day_total", "order": "descending"}]
+    },
+    {
+        "filter": "datum.rank == 1"
+    }
+    ],
+    "layer": [
+    {
+        "mark": "bar",
+        "encoding": {
+        "x": {"field": "service", "type": "nominal", "title": "Service Line"},
+        "y": {"field": "total_ridership", "type": "quantitative", "title": "Ridership on Peak Day"},
+        "color": {"field": "service", "type": "nominal", "title": "Service Line"},
+        "tooltip": [
+            {"field": "service", "title": "Service"},
+            {"field": "total_ridership", "title": "Ridership"},
+            {"field": "date_str", "title": "Peak Date"}
+        ]
+        }
+    },
+    {
+        "mark": {"type": "text", "dy": -6},
+        "encoding": {
+        "x": {"field": "service", "type": "nominal"},
+        "y": {"field": "total_ridership", "type": "quantitative"},
+        "text": {"field": "total_ridership", "type": "quantitative"}
+        }
+    }
+    ]
+}

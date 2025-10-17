@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+<script src="project2.js"></script>
+<title>Data Visualisation 2</title>
+<style>
+  /* --- Global Page Style --- */
+  body {
+    background-color: #fff8dc; /* soft yellow background */
+    color: #333;               /* dark text for contrast */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* --- Map Containers --- */
+  #route_map, #trend_map, #highest_map {
+    margin: 40px auto;
+    background-color: #fff8dc; /* white box for better visibility */
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+<h2>Public Transport KTMB in Malaysia</h2>
+<div class="viz-container">
+  <div id="route_map" class="viz-box"></div>
+  <div class="viz-text">
+    
+    <p>
+      This map visualizes the most KTMB routes by ridership for each rail service line. 
+      Each color represents a different category, such as Intercity, ETS, and Komuter. 
+      
+      
+    </p>
+  </div>
+</div>
+<style>
+  #route_map {
+    margin-left: 50px;       
+  }
+  .viz-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  width: 80%;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .viz-box {
+    flex: 2;
+  }
+
+  .viz-text {
+    margin-top: 50px;
+    flex: 1;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+</style>
+<div class="viz-container">
+  <div id="trend_map" class="viz-box"></div>
+  <div class="viz-text">
+    
+    <p>
+     This line chart shows the ridership trend for five rail service lines — ETS, Intercity, Komuter, Komuter Utara, and Shuttle Tebrau — 
+     from Q4 2023 to Q2 2025. Overall, Komuter consistently records the highest ridership but shows a gradual decline starting in 2024. 
+     In contrast, Komuter Utara demonstrates steady growth, especially toward mid-2025. Other services such as ETS and Shuttle Tebrau remain 
+     relatively stable, while Intercity ridership fluctuates slightly at a lower level.
+    </p>
+  </div>
+</div>
+<div class="viz-container">
+  <div id="highest_map" class="viz-box"></div>
+  <div class="viz-text">
+    
+    <p>
+      This bar chart shows the highest recorded daily ridership for each rail service in 2025. 
+      Komuter stands out significantly with around 92,398 passengers on its peak day, far exceeding other services. 
+      Komuter Utara follows with about 16,139 riders, while ETS, Shuttle Tebrau, and Intercity record more moderate peak ridership levels. 
+      The data highlights Komuter’s major role as the most utilized rail service in the network.
+    </p>
+  </div>
+</div>
+</body>
+</html>

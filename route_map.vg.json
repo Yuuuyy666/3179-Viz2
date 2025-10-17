@@ -1,0 +1,280 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "title": "Most Ridership KTM Route for each line In Malaysia",
+    "width": 800,
+    "height": 600,
+    "projection": {
+    "type": "mercator",
+    "center": [102.0, 4.0],
+    "scale": 5000,
+    "translate": [400, 300]
+    },
+    "layer": [
+    {
+        "data": {
+        "url": "https://raw.githubusercontent.com/jnewbery/CartogramMalaysia/9ac25c828e0306dfa2c2869f98eb2b357da69764/public/data/malaysia-states.topojson",
+        "format": {"type": "topojson", "feature": "states"}
+        },
+        "transform": [
+        {
+            "filter": "datum.properties.name !== 'Sabah' && datum.properties.name !== 'Sarawak'"
+        }
+        ],
+        "mark": {"type": "geoshape", "fill": "#E3F2FD", "stroke": "white"}
+    },
+    {
+        "data": {"url": "intercity_2025.csv"},
+        "transform": [
+        {
+            "aggregate": [
+            {"op": "sum", "field": "ridership", "as": "total_ridership"}
+            ],
+            "groupby": ["origin", "destination"]
+        },
+        {
+            "window": [{"op": "rank", "as": "rank"}],
+            "sort": [{"field": "total_ridership", "order": "descending"}]
+        },
+        {"filter": "datum.rank <= 3"},
+        {
+            "lookup": "origin",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["origin_lat", "origin_lon"]
+        },
+        {
+            "lookup": "destination",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["dest_lat", "dest_lon"]
+        },
+        {"calculate": "'Intercity Line'", "as": "category"}
+        ],
+        "mark": {"type": "rule", "color": "red", "strokeWidth": 2},
+        "encoding": {
+        "longitude": {"field": "origin_lon", "type": "quantitative"},
+        "latitude": {"field": "origin_lat", "type": "quantitative"},
+        "longitude2": {"field": "dest_lon"},
+        "latitude2": {"field": "dest_lat"},
+        "tooltip": [
+            {"field": "category", "title": "Category"},
+            {"field": "origin", "title": "From"},
+            {"field": "destination", "title": "To"},
+            {"field": "total_ridership", "title": "Total Ridership"}
+        ]
+        }
+    },
+    {
+        "data": {"url": "ets_2025.csv"},
+        "transform": [
+        {
+            "aggregate": [
+            {"op": "sum", "field": "ridership", "as": "total_ridership"}
+            ],
+            "groupby": ["origin", "destination"]
+        },
+        {
+            "window": [{"op": "rank", "as": "rank"}],
+            "sort": [{"field": "total_ridership", "order": "descending"}]
+        },
+        {"filter": "datum.rank <= 3"},
+        {
+            "lookup": "origin",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["origin_lat", "origin_lon"]
+        },
+        {
+            "lookup": "destination",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["dest_lat", "dest_lon"]
+        },
+        {"calculate": "'ETS Line'", "as": "category"}
+        ],
+        "mark": {"type": "rule", "color": "yellow", "strokeWidth": 2},
+        "encoding": {
+        "longitude": {"field": "origin_lon", "type": "quantitative"},
+        "latitude": {"field": "origin_lat", "type": "quantitative"},
+        "longitude2": {"field": "dest_lon"},
+        "latitude2": {"field": "dest_lat"},
+        "tooltip": [
+            {"field": "category", "title": "Category"},
+            {"field": "origin", "title": "From"},
+            {"field": "destination", "title": "To"},
+            {"field": "total_ridership", "title": "Total Ridership"}
+        ]
+        }
+    },
+    {
+        "data": {"url": "komuter_2025.csv"},
+        "transform": [
+        {
+            "aggregate": [
+            {"op": "sum", "field": "ridership", "as": "total_ridership"}
+            ],
+            "groupby": ["origin", "destination"]
+        },
+        {
+            "window": [{"op": "rank", "as": "rank"}],
+            "sort": [{"field": "total_ridership", "order": "descending"}]
+        },
+        {"filter": "datum.rank <= 3"},
+        {
+            "lookup": "origin",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["origin_lat", "origin_lon"]
+        },
+        {
+            "lookup": "destination",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["dest_lat", "dest_lon"]
+        },
+        {"calculate": "'Commuter Line'", "as": "category"}
+        ],
+        "mark": {"type": "rule", "color": "orange", "strokeWidth": 2},
+        "encoding": {
+        "longitude": {"field": "origin_lon", "type": "quantitative"},
+        "latitude": {"field": "origin_lat", "type": "quantitative"},
+        "longitude2": {"field": "dest_lon"},
+        "latitude2": {"field": "dest_lat"},
+        "tooltip": [
+            {"field": "category", "title": "Category"},
+            {"field": "origin", "title": "From"},
+            {"field": "destination", "title": "To"},
+            {"field": "total_ridership", "title": "Total Ridership"}
+        ]
+        }
+    },
+    {
+        "data": {"url": "komuter_utara_2025.csv"},
+        "transform": [
+        {
+            "aggregate": [
+            {"op": "sum", "field": "ridership", "as": "total_ridership"}
+            ],
+            "groupby": ["origin", "destination"]
+        },
+        {
+            "window": [{"op": "rank", "as": "rank"}],
+            "sort": [{"field": "total_ridership", "order": "descending"}]
+        },
+        {"filter": "datum.rank <= 3"},
+        {
+            "lookup": "origin",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["origin_lat", "origin_lon"]
+        },
+        {
+            "lookup": "destination",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["dest_lat", "dest_lon"]
+        },
+        {"calculate": "'North Commuter Line'", "as": "category"}
+        ],
+        "mark": {"type": "rule", "strokeWidth": 2},
+        "encoding": {
+        "color": {"value": "green"},
+        "longitude": {"field": "origin_lon", "type": "quantitative"},
+        "latitude": {"field": "origin_lat", "type": "quantitative"},
+        "longitude2": {"field": "dest_lon"},
+        "latitude2": {"field": "dest_lat"},
+        "tooltip": [
+            {"field": "category", "title": "Category"},
+            {"field": "origin", "title": "From"},
+            {"field": "destination", "title": "To"},
+            {"field": "total_ridership", "title": "Total Ridership"}
+        ]
+        }
+    },
+    {
+        "data": {"url": "shuttle_tebrau_2025.csv"},
+        "transform": [
+        {
+            "aggregate": [
+            {"op": "sum", "field": "ridership", "as": "total_ridership"}
+            ],
+            "groupby": ["origin", "destination"]
+        },
+        {
+            "window": [{"op": "rank", "as": "rank"}],
+            "sort": [{"field": "total_ridership", "order": "descending"}]
+        },
+        {"filter": "datum.rank <= 3"},
+        {
+            "lookup": "origin",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["origin_lat", "origin_lon"]
+        },
+        {
+            "lookup": "destination",
+            "from": {
+            "data": {"url": "station_coordinate.csv"},
+            "key": "station",
+            "fields": ["latitude", "longitude"]
+            },
+            "as": ["dest_lat", "dest_lon"]
+        },
+        {"calculate": "'Tebrau Line'", "as": "category"}
+        ],
+        "mark": {"type": "rule", "strokeWidth": 2},
+        "encoding": {
+        "color": {"value": "black"},
+        "opacity": {"value": 1},
+        "longitude": {"field": "origin_lon", "type": "quantitative"},
+        "latitude": {"field": "origin_lat", "type": "quantitative"},
+        "longitude2": {"field": "dest_lon"},
+        "latitude2": {"field": "dest_lat"},
+        "tooltip": [
+            {"field": "category", "title": "Category"},
+            {"field": "origin", "title": "From"},
+            {"field": "destination", "title": "To"},
+            {"field": "total_ridership", "title": "Total Ridership"}
+        ]
+        }
+    },
+    {
+        "data": {"url": "station_coordinate.csv"},
+        "mark": {"type": "circle", "size": 40},
+        "encoding": {
+        "color": {"value": "blue"},
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "tooltip": {"field": "station", "type": "nominal"}
+        }
+    }
+    ]
+}
