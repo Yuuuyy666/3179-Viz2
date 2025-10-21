@@ -51,8 +51,11 @@
     "color": {
         "field": "service",
         "type": "nominal",
-        "title": "Service Line"
-    },
+        "title": "Service Line",
+        "scale": {
+            "range": ["#00429d", "#629cc4", "#7189e1", "#ee784d", "#93003a"]
+        }
+        },
     "tooltip": [
         {"field": "service", "title": "Service"},
         {"field": "year_quarter", "title": "Quarter"},

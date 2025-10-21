@@ -117,45 +117,45 @@ date,service,ridership
 2025-07-01,intercity,116298
 2025-08-01,intercity,125877
 2025-09-01,intercity,146832
-2022-07-01,shuttle_tebrau,186746
-2022-08-01,shuttle_tebrau,218416
-2022-09-01,shuttle_tebrau,240418
-2022-10-01,shuttle_tebrau,250339
-2022-11-01,shuttle_tebrau,243680
-2022-12-01,shuttle_tebrau,285765
-2023-01-01,shuttle_tebrau,249745
-2023-02-01,shuttle_tebrau,219424
-2023-03-01,shuttle_tebrau,268579
-2023-04-01,shuttle_tebrau,260097
-2023-05-01,shuttle_tebrau,264269
-2023-06-01,shuttle_tebrau,273162
-2023-07-01,shuttle_tebrau,268501
-2023-08-01,shuttle_tebrau,269875
-2023-09-01,shuttle_tebrau,263373
-2023-10-01,shuttle_tebrau,257896
-2023-11-01,shuttle_tebrau,259504
-2023-12-01,shuttle_tebrau,290351
-2024-01-01,shuttle_tebrau,269985
-2024-02-01,shuttle_tebrau,248788
-2024-03-01,shuttle_tebrau,274319
-2024-04-01,shuttle_tebrau,257278
-2024-05-01,shuttle_tebrau,265032
-2024-06-01,shuttle_tebrau,265919
-2024-07-01,shuttle_tebrau,261564
-2024-08-01,shuttle_tebrau,257851
-2024-09-01,shuttle_tebrau,249984
-2024-10-01,shuttle_tebrau,248413
-2024-11-01,shuttle_tebrau,242252
-2024-12-01,shuttle_tebrau,272814
-2025-01-01,shuttle_tebrau,254481
-2025-02-01,shuttle_tebrau,220409
-2025-03-01,shuttle_tebrau,245619
-2025-04-01,shuttle_tebrau,234132
-2025-05-01,shuttle_tebrau,249334
-2025-06-01,shuttle_tebrau,260245
-2025-07-01,shuttle_tebrau,256739
-2025-08-01,shuttle_tebrau,260846
-2025-09-01,shuttle_tebrau,256284
+2022-07-01,shuttle tebrau,186746
+2022-08-01,shuttle tebrau,218416
+2022-09-01,shuttle tebrau,240418
+2022-10-01,shuttle tebrau,250339
+2022-11-01,shuttle tebrau,243680
+2022-12-01,shuttle tebrau,285765
+2023-01-01,shuttle tebrau,249745
+2023-02-01,shuttle tebrau,219424
+2023-03-01,shuttle tebrau,268579
+2023-04-01,shuttle tebrau,260097
+2023-05-01,shuttle tebrau,264269
+2023-06-01,shuttle tebrau,273162
+2023-07-01,shuttle tebrau,268501
+2023-08-01,shuttle tebrau,269875
+2023-09-01,shuttle tebrau,263373
+2023-10-01,shuttle tebrau,257896
+2023-11-01,shuttle tebrau,259504
+2023-12-01,shuttle tebrau,290351
+2024-01-01,shuttle tebrau,269985
+2024-02-01,shuttle tebrau,248788
+2024-03-01,shuttle tebrau,274319
+2024-04-01,shuttle tebrau,257278
+2024-05-01,shuttle tebrau,265032
+2024-06-01,shuttle tebrau,265919
+2024-07-01,shuttle tebrau,261564
+2024-08-01,shuttle tebrau,257851
+2024-09-01,shuttle tebrau,249984
+2024-10-01,shuttle tebrau,248413
+2024-11-01,shuttle tebrau,242252
+2024-12-01,shuttle tebrau,272814
+2025-01-01,shuttle tebrau,254481
+2025-02-01,shuttle tebrau,220409
+2025-03-01,shuttle tebrau,245619
+2025-04-01,shuttle tebrau,234132
+2025-05-01,shuttle tebrau,249334
+2025-06-01,shuttle tebrau,260245
+2025-07-01,shuttle tebrau,256739
+2025-08-01,shuttle tebrau,260846
+2025-09-01,shuttle tebrau,256284
 2023-10-01,komuter,1018674
 2023-11-01,komuter,1071709
 2023-12-01,komuter,1035047
@@ -180,62 +180,62 @@ date,service,ridership
 2025-07-01,komuter,869611
 2025-08-01,komuter,834444
 2025-09-01,komuter,767865
-2020-11-01,komuter_utara,84204
-2020-12-01,komuter_utara,144788
-2021-01-01,komuter_utara,91497
-2021-02-01,komuter_utara,57794
-2021-03-01,komuter_utara,105887
-2021-04-01,komuter_utara,112575
-2021-05-01,komuter_utara,59589
-2021-06-01,komuter_utara,27542
-2021-07-01,komuter_utara,40213
-2021-08-01,komuter_utara,40126
-2021-09-01,komuter_utara,50535
-2021-10-01,komuter_utara,96424
-2021-11-01,komuter_utara,158440
-2021-12-01,komuter_utara,205972
-2022-01-01,komuter_utara,182522
-2022-02-01,komuter_utara,145435
-2022-03-01,komuter_utara,164665
-2022-04-01,komuter_utara,186134
-2022-05-01,komuter_utara,251938
-2022-06-01,komuter_utara,266991
-2022-07-01,komuter_utara,274593
-2022-08-01,komuter_utara,266267
-2022-09-01,komuter_utara,314011
-2022-10-01,komuter_utara,334629
-2022-11-01,komuter_utara,309087
-2022-12-01,komuter_utara,361211
-2023-01-01,komuter_utara,316838
-2023-02-01,komuter_utara,297460
-2023-03-01,komuter_utara,343741
-2023-04-01,komuter_utara,321869
-2023-05-01,komuter_utara,340075
-2023-06-01,komuter_utara,345313
-2023-07-01,komuter_utara,342690
-2023-08-01,komuter_utara,362258
-2023-09-01,komuter_utara,367046
-2023-10-01,komuter_utara,415717
-2023-11-01,komuter_utara,430372
-2023-12-01,komuter_utara,475584
-2024-01-01,komuter_utara,402829
-2024-02-01,komuter_utara,446509
-2024-03-01,komuter_utara,422021
-2024-04-01,komuter_utara,436305
-2024-05-01,komuter_utara,483189
-2024-06-01,komuter_utara,466485
-2024-07-01,komuter_utara,451598
-2024-08-01,komuter_utara,457774
-2024-09-01,komuter_utara,465274
-2024-10-01,komuter_utara,496935
-2024-11-01,komuter_utara,489318
-2024-12-01,komuter_utara,510873
-2025-01-01,komuter_utara,500608
-2025-02-01,komuter_utara,477093
-2025-03-01,komuter_utara,428116
-2025-04-01,komuter_utara,507736
-2025-05-01,komuter_utara,522560
-2025-06-01,komuter_utara,500609
-2025-07-01,komuter_utara,492985
-2025-08-01,komuter_utara,518134
-2025-09-01,komuter_utara,520094
+2020-11-01,komuter utara,84204
+2020-12-01,komuter utara,144788
+2021-01-01,komuter utara,91497
+2021-02-01,komuter utara,57794
+2021-03-01,komuter utara,105887
+2021-04-01,komuter utara,112575
+2021-05-01,komuter utara,59589
+2021-06-01,komuter utara,27542
+2021-07-01,komuter utara,40213
+2021-08-01,komuter utara,40126
+2021-09-01,komuter utara,50535
+2021-10-01,komuter utara,96424
+2021-11-01,komuter utara,158440
+2021-12-01,komuter utara,205972
+2022-01-01,komuter utara,182522
+2022-02-01,komuter utara,145435
+2022-03-01,komuter utara,164665
+2022-04-01,komuter utara,186134
+2022-05-01,komuter utara,251938
+2022-06-01,komuter utara,266991
+2022-07-01,komuter utara,274593
+2022-08-01,komuter utara,266267
+2022-09-01,komuter utara,314011
+2022-10-01,komuter utara,334629
+2022-11-01,komuter utara,309087
+2022-12-01,komuter utara,361211
+2023-01-01,komuter utara,316838
+2023-02-01,komuter utara,297460
+2023-03-01,komuter utara,343741
+2023-04-01,komuter utara,321869
+2023-05-01,komuter utara,340075
+2023-06-01,komuter utara,345313
+2023-07-01,komuter utara,342690
+2023-08-01,komuter utara,362258
+2023-09-01,komuter utara,367046
+2023-10-01,komuter utara,415717
+2023-11-01,komuter utara,430372
+2023-12-01,komuter utara,475584
+2024-01-01,komuter utara,402829
+2024-02-01,komuter utara,446509
+2024-03-01,komuter utara,422021
+2024-04-01,komuter utara,436305
+2024-05-01,komuter utara,483189
+2024-06-01,komuter utara,466485
+2024-07-01,komuter utara,451598
+2024-08-01,komuter utara,457774
+2024-09-01,komuter utara,465274
+2024-10-01,komuter utara,496935
+2024-11-01,komuter utara,489318
+2024-12-01,komuter utara,510873
+2025-01-01,komuter utara,500608
+2025-02-01,komuter utara,477093
+2025-03-01,komuter utara,428116
+2025-04-01,komuter utara,507736
+2025-05-01,komuter utara,522560
+2025-06-01,komuter utara,500609
+2025-07-01,komuter utara,492985
+2025-08-01,komuter utara,518134
+2025-09-01,komuter utara,520094

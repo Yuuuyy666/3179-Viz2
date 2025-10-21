@@ -57,7 +57,7 @@
         },
         {"calculate": "'Intercity Line'", "as": "category"}
         ],
-        "mark": {"type": "rule", "color": "red", "strokeWidth": 2},
+        "mark": {"type": "rule", "color": "#629cc4", "strokeWidth": 2},
         "encoding": {
         "longitude": {"field": "origin_lon", "type": "quantitative"},
         "latitude": {"field": "origin_lat", "type": "quantitative"},
@@ -105,7 +105,7 @@
         },
         {"calculate": "'ETS Line'", "as": "category"}
         ],
-        "mark": {"type": "rule", "color": "yellow", "strokeWidth": 2},
+        "mark": {"type": "rule", "color": "#00429d", "strokeWidth": 2},
         "encoding": {
         "longitude": {"field": "origin_lon", "type": "quantitative"},
         "latitude": {"field": "origin_lat", "type": "quantitative"},
@@ -153,7 +153,7 @@
         },
         {"calculate": "'Commuter Line'", "as": "category"}
         ],
-        "mark": {"type": "rule", "color": "orange", "strokeWidth": 2},
+        "mark": {"type": "rule", "color": "#7189e1", "strokeWidth": 2},
         "encoding": {
         "longitude": {"field": "origin_lon", "type": "quantitative"},
         "latitude": {"field": "origin_lat", "type": "quantitative"},
@@ -203,7 +203,7 @@
         ],
         "mark": {"type": "rule", "strokeWidth": 2},
         "encoding": {
-        "color": {"value": "green"},
+        "color": {"value": "#ee784d"},
         "longitude": {"field": "origin_lon", "type": "quantitative"},
         "latitude": {"field": "origin_lat", "type": "quantitative"},
         "longitude2": {"field": "dest_lon"},
@@ -252,7 +252,7 @@
         ],
         "mark": {"type": "rule", "strokeWidth": 2},
         "encoding": {
-        "color": {"value": "black"},
+        "color": {"value": "#93003a"},
         "opacity": {"value": 1},
         "longitude": {"field": "origin_lon", "type": "quantitative"},
         "latitude": {"field": "origin_lat", "type": "quantitative"},
@@ -275,6 +275,27 @@
         "latitude": {"field": "latitude", "type": "quantitative"},
         "tooltip": {"field": "station", "type": "nominal"}
         }
+    },
+    {
+        "data": {
+            "values": [{"label": "ETS Line", "color": "ets"},{"label": "Intercity Line", "color": "intercity"},
+            {"label": "Commuter Line", "color": "komuter"},{"label": "North Commuter Line", "color": "komuter utara"},
+            {"label": "Tebraus Line", "color": "shuttle tebrau"}
+        ]
+        },
+        "mark": {"type": "text", "opacity": 0},
+        "encoding": {
+            "text": {"field": "label"},
+            "color": {
+            "field": "color",
+            "type": "nominal",
+            "title": "Service Line",
+            "scale": {
+                "range": ["#00429d", "#629cc4", "#7189e1", "#ee784d", "#93003a"]
+            }
+            }
+        }
     }
+    
     ]
 }

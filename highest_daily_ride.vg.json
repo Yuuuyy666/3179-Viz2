@@ -20,11 +20,11 @@
     },
     {
         "fold": [
-        "rail_ets",
-        "rail_intercity",
-        "rail_komuter_utara",
-        "rail_tebrau",
-        "rail_komuter"
+        "ets",
+        "intercity",
+        "komuter utara",
+        "tebrau",
+        "komuter"
         ],
         "as": ["service", "ridership"]
     },
@@ -54,9 +54,18 @@
     {
         "mark": "bar",
         "encoding": {
-        "x": {"field": "service", "type": "nominal", "title": "Service Line"},
+        "x": {"field": "service", "type": "nominal", "title": "Service Line","axis": {
+        "labelAngle": 0}  
+        },
         "y": {"field": "total_ridership", "type": "quantitative", "title": "Ridership on Peak Day"},
-        "color": {"field": "service", "type": "nominal", "title": "Service Line"},
+        "color": {
+        "field": "service",
+        "type": "nominal",
+        "title": "Service Line",
+        "scale": {
+            "range": ["#00429d", "#629cc4", "#7189e1", "#ee784d", "#93003a"]
+        }
+        },
         "tooltip": [
             {"field": "service", "title": "Service"},
             {"field": "total_ridership", "title": "Ridership"},
